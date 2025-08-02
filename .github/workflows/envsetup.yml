@@ -1,0 +1,13 @@
+name: Setup ENV
+on: [push]
+env:
+  WORKFLOW_ENV: "Workflow Env Variable"
+  OVERRIDE: "WV"
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      -  name: "Step 1"
+         env:
+           STEP_ENV: "Step Env Variable"
+         run: echo "$STEP_ENV"
