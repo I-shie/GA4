@@ -10,4 +10,6 @@ jobs:
       -  name: "Step 1"
          env:
            STEP_ENV: "Step Env Variable"
-         run: echo "${{env.STEP_ENV}}"
+         run: |
+           echo "${{env.STEP_ENV}}"
+           echo "${{env.WORKFLOW}}"
