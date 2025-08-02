@@ -2,16 +2,17 @@ name: Setup ENV
 on: [push]
 env:
   WORKFLOW_ENV: "Workflow Env Variable"
-  OVERRIDE: "WV"
+  OVERRIDE: "Workflow OVER ENV Variable"
 jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-      OVERRIDE: "JOB 1 Env Variable"
+      OVERRIDE: "JOB 1 OVER Env Variable"
     steps:
       -  name: "Step 1"
          env:
            STEP_ENV: "Step Env Variable"
+           OVERRIDE: "STEP 1 OVER Env Variable"
          run: |
            echo "${{env.STEP_ENV}}"
            echo "${{env.WORKFLOW_ENV}}"
