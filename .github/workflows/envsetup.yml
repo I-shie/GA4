@@ -6,6 +6,8 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    env:
+      OVERRIDE: "JOB 1 Env Variable"
     steps:
       -  name: "Step 1"
          env:
@@ -13,3 +15,4 @@ jobs:
          run: |
            echo "${{env.STEP_ENV}}"
            echo "${{env.WORKFLOW_ENV}}"
+           echo "${{env.OVERRIDE}}"
